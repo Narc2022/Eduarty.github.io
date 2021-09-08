@@ -37,7 +37,21 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<script>
+  var operatingSystem, userAgentString = navigator.userAgent;
+var link = $("#store");
 
+if (userAgentString.indexOf("iPhone") > -1 || userAgentString.indexOf("iPod") > -1 || userAgentString.indexOf("iPad") > -1) {
+  operatingSystem = "iOS";
+  link.attr("href", "http://store.apple.com/us/browse/app");
+} else if (/Android/.test(userAgentString)) {
+  operatingSystem = "Android";
+  link.attr("href", "https://play.google.com/store/apps?hl=en");
+} else if (/Windows Phone/.test(userAgentString)) {
+  operatingSystem = "Windows Phone";
+  link.attr("href", "http://www.windowsphone.com/en-us/store");
+}
+</script>
 <body>
 
   <!-- ======= Header ======= -->
@@ -121,7 +135,7 @@
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <h4>1 BHD</h4>
-                  <a href="https://bit.ly/EduArty" class="book-download"> <i class="bi bi-download"></i></a>
+                  <a href="" id="store" class="book-download"> <i class="bi bi-download"></i></a>
                 </div>
 
                 <h3>Physics Case Studies</h3>
@@ -987,7 +1001,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  
 </body>
 
 </html>
